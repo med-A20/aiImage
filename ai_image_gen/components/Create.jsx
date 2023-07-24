@@ -15,7 +15,7 @@ const Create = () => {
     const generate = async ()=>{
         setGenerating(prev => !prev)
         // call API to create image with the given prompt and display it in a div element here
-        await axios.post("http://localhost:8080/api/v1/dalle", {prompt : prompt}).then(res => {
+        await axios.post("https://dalleimage-pme0.onrender.com/api/v1/dalle", {prompt : prompt}).then(res => {
             setUrl(res.data?.photo);
         }).catch(err => {
             console.error(err)
