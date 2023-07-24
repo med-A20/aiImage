@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Create = () => {
     const [prompt, setPrompt] = useState('');
-    const [generating, setGenerating] = useState(false);
+    const [generating, setGenerating] = useState(true);
     const [url, setUrl] = useState('')
 
     const imageLoader = () => {
@@ -25,13 +25,12 @@ const Create = () => {
   return (
     <section className="max-w-7xl mx-auto min-h-fit flex flex-col md:flex-row justify-around items-center">
         {/* generated Image */}
-        <div className='order-2 w-[512px] h-[512px]  rounded-lg overflow-hidden'>
+        <div className='relative order-2 w-[400px] h-[400px] md:w-[512px] md:h-[512px]   rounded-lg overflow-hidden'>
             <Image 
             loader={imageLoader}
             src="me.png"
+            fill={true}
             alt="Picture of the author"
-            width={512}
-            height={512}
             onLoadingComplete={()=>{
                 setGenerating(prev => !prev)
                 setPrompt("")
