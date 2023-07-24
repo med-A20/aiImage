@@ -33,7 +33,6 @@ const Create = () => {
             alt="Picture of the author"
             onLoadingComplete={()=>{
                 setGenerating(prev => !prev)
-                setPrompt("")
             }}
             />
         </div>
@@ -46,7 +45,7 @@ const Create = () => {
                 >
                     Prompt
                 </label>
-                <input 
+                <textarea 
                 id="prompt"
                 type='text' 
                 placeholder='Write you promt' 
