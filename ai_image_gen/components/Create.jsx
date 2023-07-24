@@ -20,8 +20,7 @@ const Create = () => {
         }).catch(err => {
             console.error(err)
         })
-        setGenerating(prev => !prev)
-        setPrompt("")
+        
     }
   return (
     <section className="max-w-7xl mx-auto min-h-fit flex flex-col md:flex-row justify-around items-center">
@@ -33,6 +32,10 @@ const Create = () => {
             alt="Picture of the author"
             width={512}
             height={512}
+            onLoadingComplete={()=>{
+                setGenerating(prev => !prev)
+                setPrompt("")
+            }}
             />
         </div>
 
